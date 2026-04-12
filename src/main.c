@@ -24,6 +24,33 @@
 
 int main() {
 
+   /* int opition id; 
+        printf("Select from options from list below.\n");
+        printf("1.Add \n2.Find a student \n3.Update Students info \n4.Delete \n5.List Student Information\n");
+        scanf("%d",&option);
+        
+        switch(option){
+        case 1:
+                //calls adding method
+                break;
+        case 2:
+                //calls finding  method
+                printf("Enter the students id number: ");
+                scanf("%10d",&id)
+                find(//array name ,id);
+                break;
+        case 3:
+                //calls updating  method
+                break;
+        case 4:
+                //calls delete method
+                break;
+        case 5:
+                 //calls listing method
+                break;
+        } */
+
+
    printf("Gradebook program end\n");
    course c;
    setCourseName(&c, "Intro to C Programming");
