@@ -61,6 +61,20 @@ int main() {
 
    student s = addStudent();
    addStudentToGradebook(&gb, s);
-   
+
+   /* int find(//array name, int a){
+        int ID = a;
+        char grade;
+        //search for id in array
+        for(int i=0; i<arraysize; i++){
+           
+        }
+        //get grade that corressponds to the id enterd
+                grade =;
+        //display id number and student grade
+        printf("-----------------Student Infromation------------------------");
+        printf("Student ID: %d\tGrade: %s",ID, grade);
+
+        }*/
     
 }
