@@ -45,5 +45,30 @@ int main(){
         printf("Student ID: %d\tGrade: %s",ID, grade);
 
         }*/
+   /*updated version 
+     void  findstudent(//array name, //int s){
+        
+        int idnum;
+        //ask user for students id
+        printf("Enter the students id number: ");
+        scanf("%10d",&idnum);
+        //search for id in array
+        for (int i=0; i<s;i++);{
+                if (student[i].id == idnum) 
+                {
+                        printf("Student found.\n");
+                        //display students current info
+                        printf("-----------------Student Infromation------------------------\n");
+                        printf("Student Name: %s\tID: %d\tGrade: %c",student[i].name student[i].id, student[i].grade);
+                }
+                else{ 
+                printf("Student not found..."); 
+                }
+         
+        }
+         
+        }
+ 
+   */
     
 }
