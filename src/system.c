@@ -140,7 +140,8 @@ void courseMenu(course *c){
                      }
                      break;
                    case 4: {
-                        printf("")
+                        printf("Case 4 put here");
+                        break;
                    }
                   }
                   default:

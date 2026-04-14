@@ -27,6 +27,7 @@
 int main(){
 
    printf("Welcome to the gradebook program!\n");
+   System sys;
    systemMenu(&sys);
 
    // MELANIES CODE
