@@ -23,25 +23,34 @@ char *getCourseName(course *c) {
     // Placeholder for getting the course name
     return c->course_name;
 }
-void  findstudent(//array name, //int s){
-        int idnum;
-        //ask user for students id
+void findstudent(//array name, //int s){
+        char subject[50];
+        //ask for course name to search for student in
+        printf("Enter the course you want to look for a student in: ");
+        scanf("%[^\n]s",subject);
+       
+        //ask user for students id(key)
+        // used id for key incase their are students whith same name or name gets missspelled
+        int key;
         printf("Enter the students id number: ");
-        scanf("%10d",&idnum);
-        
+        scanf("%10d",&key);
+        //access course enter and look for student in course 
+
         //search for id in array
-        for (int i=0; i<s;i++);{
+        /*for (int i=0; i<s;i++);
+          {
                 if (student[i].id == idnum) 
                 {
                         printf("Student found.\n");
                         //display students current info
                         printf("-----------------Student Infromation------------------------\n");
                         printf("Student Name: %s\tID: %d\tGrade: %c",student[i].name student[i].id, student[i].grade);
-                }
-                else{ 
+                }*/
+                else
+                { 
                 printf("Student not found..."); 
                 }
          
-        }
+         }
          
         }
