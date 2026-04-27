@@ -45,7 +45,7 @@ void findstudent(){
         int key;
         printf("Enter the students id number: ");
         scanf("%10d",&key);
-        //access course enter and look for student in course 
+        //access course and look for student in course 
         for (int i=0; i<//student array len;i++);
           {
                 if (c->student[i].id_num == key) 
