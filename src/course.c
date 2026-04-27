@@ -53,11 +53,11 @@ void findstudent(){
                         printf("Student found.\n");
                         //display students current info
                         printf("-----------------Student Infromation------------------------\n");
-                        printf("Student Name: %s\n",student[i].name);
-                        print("ID: %d\n",student[i].id_number);
-                        printf("Homework grade: %f", student[i].hw_scores);
-                        print("Exam grade: %f", student[i].exam_scores);
-                        printf("Project grade: %f\n",student[i].project_scores);
+                        printf("Student Name: %s\n",s->name);
+                        print("ID: %d\n",s->id_number);
+                        printf("Homework grade: %f", s->hw_scores);
+                        print("Exam grade: %f", s->exam_scores);
+                        printf("Project grade: %f\n",s->project_scores);
                     
                 }
                 else
