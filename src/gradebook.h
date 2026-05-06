@@ -22,5 +22,6 @@ void deleteStudentFromGradebook(gradebook *gb, int index);
 student* findStudentByID(gradebook *gb);
 void printStudentAverages(gradebook *gb);
 void sortStudentsByID(gradebook *gb);
+void printAllScores(student *s);
 
 #endif
