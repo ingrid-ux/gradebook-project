@@ -255,10 +255,14 @@ student* findStudentByID(gradebook *gb){
     for(int i = 0; i < gb->studentCount; i++)
     {
             
-        if(gb->students[i].id_number == id){
-            printf("Student: %s (ID: %d) found in gradebook.\n", 
-            gb->students[i].name, 
-            gb->students[i].id_number);
+           printf("-----------------Student Information------------------------\n");
+            printf("Student: %s found in gradebook.\n", gb->students[i].name);
+            printf("ID: %d\n", gb->students[i].id_number);
+            //display students current info such as
+            //name, id, hw scores, project scores, test scores
+            //using exsiting printAllScores to display's students info
+            printf("-----------------Scores Information------------------------\n");
+            printAllScores(&gb->students[i]);
             return &gb->students[i];
         }
     }
