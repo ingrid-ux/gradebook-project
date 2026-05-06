@@ -254,7 +254,7 @@ student* findStudentByID(gradebook *gb){
     scanf("%d", &id);
     for(int i = 0; i < gb->studentCount; i++)
     {
-            
+            if(gb->students[i].id_number == id){ 
            printf("-----------------Student Information------------------------\n");
             printf("Student: %s found in gradebook.\n", gb->students[i].name);
             printf("ID: %d\n", gb->students[i].id_number);
