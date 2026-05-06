@@ -96,12 +96,13 @@ void systemMenu(System *sys){
             
         }
         case 5: {
-            // ask the user which student to delete
-            int idx = selectStudent(&c->gradebook);
-    
+            gradebook *gb = &c->gradebook;   // a shortcut pointer to gradebook
+            
+            int idx = selectStudent(gb);     // select student using shortcut
+            
             // check to see if the valid index, delete the student
             if (idx >= 0) {
-                deleteStudentFromGradebook(&c->gradebook, idx);
+                deleteStudentFromGradebook(gb, idx);
             }
             break;
         }
