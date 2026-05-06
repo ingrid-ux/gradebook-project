@@ -25,6 +25,27 @@ char *getCourseName(course *c) {
     return c->course_name;
 }
 
+
+void deleteCourse(course *courses, int *courseCount, int courseIndex){
+
+    
+    if(courseIndex < 0 || courseIndex >= *courseCount){
+        printf("Invalid course selection.\n");
+        return;
+    }
+
+    
+    for(int i = courseIndex; i < *courseCount - 1; i++){
+        courses[i] = courses[i + 1];
+    }
+
+    
+    (*courseCount)--;
+
+    printf("Course was successfully deleted.\n");
+}
+
+
 /*
 void findstudent(course *course, int courseCount){
         //course *course is a pointer to course structure

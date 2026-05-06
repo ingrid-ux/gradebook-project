@@ -60,9 +60,8 @@ void systemMenu(System *sys){
    printf("1. Add course to system\n");
    printf("2. Print list of courses in system\n");
    printf("3. Choose a course to manage\n");
-   printf("4. Find a student in Course\n");
-   printf("5. Delete a student\n"); // raul 
-   printf("6. Exit\n");
+   printf("4. Delete a course from system\n");
+   printf("0. Exit\n");
    printf("\n------------------------------------\n");
    scanf("%d", &choice);
 
@@ -92,6 +91,11 @@ void systemMenu(System *sys){
             break;
          }
         case 4: {
+            int idx;
+            printListofCoursesInSystem(sys);
+            printf("Please choose a course to delete:\n");
+            scanf("%d", &idx);
+            deleteCourse(sys->courses, &sys->courseCount, idx-1);
             break;
             
         }
@@ -108,7 +112,7 @@ void systemMenu(System *sys){
             printf("Invalid choice. Please try again.\n");
       }
 
-   }while(choice !=4);
+   }while(choice !=0);
 
    printf("Gradebook program end\n");
 
@@ -127,6 +131,9 @@ void courseMenu(course *c){
                printf("4. Find Student by ID\n");
                printf("5. Update student name\n");
                printf("6. Manage student's scores\n");
+               printf("7. Delete a student\n");
+               printf("8. Print Student's Averages\n");
+               printf("9. Sort Student By ID\n");
                printf("0. Exit Course Management Menu..\n");
                printf("\n------------------------------------\n");
                scanf("%d", &choice);
@@ -171,6 +178,25 @@ void courseMenu(course *c){
                         managingScores(&c->gradebook);
                         break;
                    }
+                   case 7: {
+                        // ask the user which student to delete
+                        int idx = selectStudent(&c->gradebook);
+                        // check to see if the valid index, delete the student
+                        if (idx >= 0) {
+                            deleteStudentFromGradebook(&c->gradebook, idx);
+                        }
+                        break;
+
+                   }
+                   case 8:{
+                        printStudentAverages(&c->gradebook);
+                        break;
+                   }
+                   case 9:{
+                        sortStudentsByID(&c->gradebook);
+                        break;
+                   }
+    
                 
                   default:
                      printf("Invalid choice. Please try again.\n");

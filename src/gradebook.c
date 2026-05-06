@@ -247,6 +247,7 @@ void deleteStudentFromGradebook(gradebook *gb, int IDnumber) {
     printf("Student was successfully deleted.\n");
 }
 
+// MELANIE'S CODE 
 student* findStudentByID(gradebook *gb){
     int id;
     printf("Enter Student ID: ");
@@ -262,4 +263,67 @@ student* findStudentByID(gradebook *gb){
         printf("Student not found.\n");
         return NULL; 
     
+}
+
+// KIMBERLY'S CODE 
+
+void printStudentAverages(gradebook *gb){
+
+    int index = selectStudent(gb);
+
+    if(index == -1){
+        return;
+    }
+
+    double hwAvg = 0, examAvg = 0, projectAvg = 0;
+
+    // Homework average
+    if(gb->students[index].homeworkCount > 0){
+        double sum = 0;
+        for(int i = 0; i < gb->students[index].homeworkCount; i++){
+            sum += gb->students[index].hw_scores[i];
+        }
+        hwAvg = sum / gb->students[index].homeworkCount;
+    }
+
+    // Exam average
+    if(gb->students[index].examCount > 0){
+        double sum = 0;
+        for(int i = 0; i < gb->students[index].examCount; i++){
+            sum += gb->students[index].exam_scores[i];
+        }
+        examAvg = sum / gb->students[index].examCount;
+    }
+
+    // Project average
+    if(gb->students[index].projectCount > 0){
+        double sum = 0;
+        for(int i = 0; i < gb->students[index].projectCount; i++){
+            sum += gb->students[index].project_scores[i];
+        }
+        projectAvg = sum / gb->students[index].projectCount;
+    }
+
+    printf("\n--- Averages for %s ---\n", gb->students[index].name);
+    printf("Homework Average: %.2f\n", hwAvg);
+    printf("Exam Average: %.2f\n", examAvg);
+    printf("Project Average: %.2f\n", projectAvg);
+}
+// KIMBERLY'S CODE 
+void sortStudentsByID(gradebook *gb){
+
+    for(int i = 0; i < gb->studentCount - 1; i++){
+        for(int j = 0; j < gb->studentCount - i - 1; j++){
+
+            if(gb->students[j].id_number > gb->students[j + 1].id_number){
+
+                // swap students
+                student temp = gb->students[j];
+                gb->students[j] = gb->students[j + 1];
+                gb->students[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Students sorted by ID successfully.\n");
 }

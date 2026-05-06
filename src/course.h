@@ -15,5 +15,5 @@ char *getCourseName(course *c);
 course addCourse();
 //declaring findstudent to use in course.c 
 void findstudent (course *course, int courseCount);
-
+void deleteCourse(course *courses, int *courseCount, int courseIndex);
 #endif
